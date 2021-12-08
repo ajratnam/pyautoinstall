@@ -8,8 +8,9 @@ class AutoInstall:
     def find_module(fullname, path=None):
         if path is None:
             try:
-                if input(f"Should I install {fullname}? (y / n) - ").lower() not in ['y', 'yes']: 1 / 0
+                if input(f'Should I install {fullname}? (y/n) - ').lower() not in ['y', 'yes']: 1 / 0
                 subprocess.check_output([sys.executable, '-m', 'pip', 'install', fullname])
+                print(f'Successfully installed {fullname}!!')
                 return type('', (), {'load_module': __import__})
             except: ...
 
