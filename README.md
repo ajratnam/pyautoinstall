@@ -1,0 +1,2 @@
+# pyautoinstall
+Forget pip install.
